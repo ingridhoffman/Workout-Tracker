@@ -38,7 +38,11 @@ The user should be able to:
    ```
    npm install
    ```
-3.
+3. Start server
+   ```
+   npm run start
+   ```
+4.
 
 ### End User Experience
 
