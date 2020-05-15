@@ -6,25 +6,22 @@ mongoose.connect("mongodb://localhost/workout", {
 	useFindAndModify: false,
 });
 
-let date = new Date();
-// Note: Weekdays are not accurate to dates generated
+let date1 = new Date();
+date1.setUTCDate(date1.getUTCDate() - 1);
+let weekday1 = date1.getDay();
+let date2 = new Date();
+date2.setUTCDate(date1.getUTCDate() - 1);
+let weekday2 = date2.getDay();
+let date4 = new Date();
+date4.setUTCDate(date1.getUTCDate() - 3);
+let weekday4 = date4.getDay();
+let date5 = new Date();
+date5.setUTCDate(date1.getUTCDate() - 4);
+let weekday5 = date5.getDay();
+
 let workoutSeed = [
 	{
-		day: new Date().setUTCDate(date.getUTCDate() - 10),
-		exercises: [
-			{
-				type: "resistance",
-				name: "Bicep Curl",
-				duration: 20,
-				weight: 100,
-				reps: 10,
-				sets: 4,
-			},
-		],
-		weekday: 1,
-	},
-	{
-		day: new Date().setDate(new Date().getDate() - 9),
+		day: new Date(date1),
 		exercises: [
 			{
 				type: "resistance",
@@ -34,25 +31,19 @@ let workoutSeed = [
 				reps: 10,
 				sets: 4,
 			},
-		],
-		weekday: 2,
-	},
-	{
-		day: new Date().setDate(new Date().getDate() - 8),
-		exercises: [
 			{
 				type: "resistance",
-				name: "Push Press",
+				name: "Bench Press",
 				duration: 25,
 				weight: 185,
 				reps: 8,
 				sets: 4,
 			},
 		],
-		weekday: 3,
+		weekday: weekday1,
 	},
 	{
-		day: new Date().setDate(new Date().getDate() - 7),
+		day: new Date(date2),
 		exercises: [
 			{
 				type: "cardio",
@@ -61,38 +52,10 @@ let workoutSeed = [
 				distance: 4,
 			},
 		],
-		weekday: 4,
+		weekday: weekday2,
 	},
 	{
-		day: new Date().setDate(new Date().getDate() - 6),
-		exercises: [
-			{
-				type: "resistance",
-				name: "Bench Press",
-				duration: 20,
-				weight: 285,
-				reps: 10,
-				sets: 4,
-			},
-		],
-		weekday: 5,
-	},
-	{
-		day: new Date().setDate(new Date().getDate() - 5),
-		exercises: [
-			{
-				type: "resistance",
-				name: "Bench Press",
-				duration: 20,
-				weight: 300,
-				reps: 10,
-				sets: 4,
-			},
-		],
-		weekday: 6,
-	},
-	{
-		day: new Date().setDate(new Date().getDate() - 4),
+		day: new Date(date4),
 		exercises: [
 			{
 				type: "resistance",
@@ -102,26 +65,6 @@ let workoutSeed = [
 				reps: 10,
 				sets: 4,
 			},
-		],
-		weekday: 0,
-	},
-	{
-		day: new Date().setDate(new Date().getDate() - 3),
-		exercises: [
-			{
-				type: "resistance",
-				name: "Bench Press",
-				duration: 20,
-				weight: 300,
-				reps: 10,
-				sets: 4,
-			},
-		],
-		weekday: 1,
-	},
-	{
-		day: new Date().setDate(new Date().getDate() - 2),
-		exercises: [
 			{
 				type: "resistance",
 				name: "Military Press",
@@ -131,19 +74,19 @@ let workoutSeed = [
 				sets: 4,
 			},
 		],
-		weekday: 2,
+		weekday: weekday4,
 	},
 	{
-		day: new Date().setDate(new Date().getDate() - 1),
+		day: new Date(date5),
 		exercises: [
 			{
-				type: "resistance",
-				name: "Bench",
-				duration: 30,
-				distance: 2,
+				type: "cardio",
+				name: "Walking",
+				duration: 40,
+				distance: 4,
 			},
 		],
-		weekday: 3,
+		weekday: weekday5,
 	},
 ];
 
