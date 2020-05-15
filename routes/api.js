@@ -30,13 +30,9 @@ router.put("/api/workouts/:id", (req, res) => {
 
 // POST - Insert a new workout
 router.post("/api/workouts", (req, res) => {
-	console.log(req.body);
 	const date = new Date();
-	console.log("date: " + date);
-	const weekday = new Date().getDay();
-	console.log("weekday: " + weekday);
-	const workout = new db.Workout({ day: date, weekday: weekday });
-	// workout.setWeekday();
+	const workout = new db.Workout({ day: date });
+	workout.setWeekday();
 	console.log("workout: " + workout);
 	db.Workout.create(workout)
 		.then((dbWorkout) => {
