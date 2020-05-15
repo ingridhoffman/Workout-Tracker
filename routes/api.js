@@ -32,10 +32,8 @@ router.post("/api/workouts", (req, res) => {
 	const date = new Date();
 	const workout = new db.Workout({ day: date });
 	workout.setWeekday();
-	console.log("workout: " + workout);
 	db.Workout.create(workout)
 		.then((dbWorkout) => {
-			console.log(dbWorkout);
 			res.json(dbWorkout);
 		})
 		.catch((err) => {
