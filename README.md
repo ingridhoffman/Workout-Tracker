@@ -1,12 +1,12 @@
 # Workout-Tracker
 
-This web based application provides a tracking platform for users to create custom workouts and track their completion.
+This web based application provides a tracking platform for users to track both cardio and resistance workouts. The UI has been provided by the client. Functionality was developed untilizing Node.js, MongoDB with Mongoose, and Express.
 
 ## User Story
 
 ```
 AS someone interested in being fit and healthy,
-I WANT to be able to view create and track daily workouts
+I WANT to be able to create and track daily workouts
 SO THAT I will reach my fitness goals quicker
 
 I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
@@ -31,30 +31,44 @@ The user should be able to:
 
 # Application Usage
 
-### Installation
+## Node.js
 
-1. Download application package and open folder in Node.js
-2. Install node dependencies
-   ```
-   npm install
-   ```
-3. Start server
-   ```
-   npm run start
-   ```
-4.
+Download application package and open folder in Node.js
 
-### End User Experience
+Install node dependencies:
 
-### Technologies Utilized
+```
+npm install
+```
 
-Node.js
-Mongo database with Mongoose schema
-Express route handling
+Install MongoDB (if you do not have it already) and start the Mongo shell - for assistance visit: https://docs.mongodb.com/manual/installation/
+
+Start the server:
+
+```
+npm run start
+```
+
+Open a web browser and navigate to localhost:3000 to demo the application
+
+## Web Browser
+
+To run a demo of this application, visit:
+
+# Contributions
+
+### Known Issues
+
+- Graphs display incorrect days becasue graph data arrays are constructed with each exercise populating individually into the array and no correlation of actual current day and past days
+
+### Suggested Improvements
+
+- Let user select date of workout - currently posts with Date.now()
+- For stats, date range is set to current week - should be able to view past weeks, and have month and year views as well
 
 # Credits
 
-Starter files provided by:
+All files in the Public folder were provided by:
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved
 
 # License
